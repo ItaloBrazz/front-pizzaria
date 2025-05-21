@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - Pizzaria Delícia</title>
+  <link rel="stylesheet" href="css/menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="menu">
+  <header>
+    <div class="container">
+      <h1>Pizzaria Delícia</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pizzas.html" class="active">Cardápio</a></li>
+          <li><a href="pedidos.html">Meus Pedidos</a></li>
+          <li><a href="#" id="logout">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="destaques">
+      <h2>Nosso Cardápio</h2>
+      <div class="pizzas-grid" id="pizzas-container">
+        <!-- Pizzas serão carregadas via JS -->
+      </div>
+    </section>
+
+    <!-- Modal para fazer pedido -->
+    <div id="pedidoModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Fazer Pedido</h2>
+        <form id="pedidoForm">
+          <input type="hidden" id="pizzaId">
+          <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" min="1" value="1" required>
+          </div>
+          <div class="form-group">
+            <label for="endereco">Endereço de Entrega</label>
+            <textarea id="endereco" required></textarea>
+          </div>
+          <div class="form-group">
+            <p>Total: R$ <span id="totalPedido">0.00</span></p>
+          </div>
+          <button type="submit" class="btn">Confirmar Pedido</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Pizzaria Delícia. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/pizzas.js"></script>
+</body>
+</html>

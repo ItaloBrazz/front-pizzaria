@@ -1,0 +1,292 @@
+/* Reset e Variáveis Globais */
+:root {
+  --vermelho-pizzaria: #e63946;
+  --vermelho-escuro: #c1121f;
+  --creme: #f1faee;
+  --azul-claro: #a8dadc;
+  --azul: #457b9d;
+  --azul-escuro: #1d3557;
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transicao: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--creme);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Estilos do Header */
+header {
+  background-color: var(--vermelho-pizzaria);
+  color: white;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--sombra);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: var(--transicao);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Seção Hero */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  background-color: var(--vermelho-pizzaria);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transicao);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: var(--sombra);
+}
+
+.btn:hover {
+  background-color: var(--vermelho-escuro);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Seção de Destaques */
+.destaques {
+  padding: 3rem 0;
+}
+
+.destaques h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--azul-escuro);
+  position: relative;
+}
+
+.destaques h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--vermelho-pizzaria);
+  margin: 0.5rem auto 0;
+}
+
+.pizzas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Cards de Pizza */
+.pizza-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+.pizza-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pizza-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.pizza-info {
+  padding: 1.5rem;
+}
+
+.pizza-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--azul-escuro);
+}
+
+.pizza-info p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.pizza-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pizza-price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--vermelho-pizzaria);
+}
+
+.btn-ver {
+  background-color: var(--azul);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transicao);
+  font-size: 0.9rem;
+}
+
+.btn-ver:hover {
+  background-color: var(--azul-escuro);
+}
+
+/* Footer */
+footer {
+  background-color: var(--azul-escuro);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+  }
+  
+  nav ul {
+    margin-top: 1rem;
+  }
+  
+  nav ul li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .hero {
+    padding: 4rem 1rem;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Estados e Mensagens */
+.loader, .error-message, .sem-pizzas {
+  text-align: center;
+  padding: 2rem;
+  grid-column: 1 / -1;
+}
+
+.loader {
+  color: var(--vermelho-pizzaria);
+  font-size: 1.2rem;
+}
+
+.error-message {
+  color: var(--vermelho-pizzaria);
+}
+
+.btn-tentar-novamente {
+  margin-top: 1rem;
+  background-color: var(--vermelho-pizzaria);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.btn-tentar-novamente:hover {
+  background-color: var(--vermelho-escuro);
+}
+
+.sem-pizzas {
+  color: #666;
+}
+

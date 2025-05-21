@@ -1,0 +1,288 @@
+/* orders.css - Estilo para página de pedidos */
+
+/* Variáveis de cores */
+:root {
+  --primary: #e74c3c;       /* Vermelho pizzaria */
+  --primary-dark: #c0392b;  /* Vermelho escuro */
+  --secondary: #2c3e50;     /* Azul escuro */
+  --light: #ecf0f1;         /* Cinza claro */
+  --dark: #34495e;          /* Azul médio */
+  --white: #ffffff;
+  --text: #333333;
+  --success: #27ae60;       /* Verde */
+  --warning: #f39c12;       /* Amarelo */
+  --danger: #e74c3c;        /* Vermelho */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Container principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+header {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1.5rem 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Navegação */
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a.active {
+  background-color: var(--white);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Conteúdo principal */
+main {
+  padding: 2rem 0;
+}
+
+main h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+  font-size: 2rem;
+  position: relative;
+}
+
+main h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary);
+  margin: 0.5rem auto 0;
+}
+
+/* Container de pedidos */
+.pedidos-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Card de pedido */
+.pedido-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border-left: 4px solid var(--primary);
+}
+
+.pedido-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.pedido-header h3 {
+  color: var(--secondary);
+  font-size: 1.2rem;
+}
+
+.pedido-status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-pendente {
+  background-color: var(--warning);
+  color: var(--white);
+}
+
+.status-preparando {
+  background-color: #3498db;
+  color: var(--white);
+}
+
+.status-enviado {
+  background-color: #2ecc71;
+  color: var(--white);
+}
+
+.status-entregue {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.status-cancelado {
+  background-color: var(--danger);
+  color: var(--white);
+}
+
+.pedido-body {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.pedido-info {
+  display: flex;
+}
+
+.pedido-info strong {
+  min-width: 120px;
+  color: var(--secondary);
+}
+
+.pedido-info p {
+  color: #555;
+}
+
+.pedido-pizza {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #ddd;
+}
+
+.pedido-pizza h4 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.pedido-pizza p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.pedido-total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-weight: bold;
+  text-align: right;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* Mensagem quando não há pedidos */
+.sem-pedidos {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.sem-pedidos a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sem-pedidos a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+  }
+  
+  nav ul {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0.5rem;
+  }
+  
+  .pedido-info {
+    flex-direction: column;
+  }
+  
+  .pedido-info strong {
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main h2 {
+    font-size: 1.5rem;
+  }
+  
+  .pedido-card {
+    padding: 1rem;
+  }
+}

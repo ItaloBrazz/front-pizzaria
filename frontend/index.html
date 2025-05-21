@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria Delícia</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="home">
+  <header>
+    <div class="container">
+      <h1>Pizzaria Delícia</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pizzas.html">Cardápio</a></li>
+          <li><a href="pedidos.html">Meus Pedidos</a></li>
+          <li><a href="#" id="logout">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>As melhores pizzas da cidade!</h2>
+      <p>Faça seu pedido agora mesmo e aproveite nosso delivery rápido.</p>
+      <a href="pizzas.html" class="btn">Ver Cardápio</a>
+    </section>
+
+    <section class="destaques">
+      <h2>Pizzas em Destaque</h2>
+      <div class="pizzas-grid" id="destaques">
+        <!-- Pizzas serão carregadas via JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Pizzaria Delícia. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/home.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/pizzas.js"></script>
+</body>
+</html>
