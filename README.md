@@ -7,7 +7,7 @@ Sistema completo para gerenciamento de pizzaria, incluindo controle de pedidos, 
 - Cadastro de pizzas, sabores e tamanhos  
 - Gerenciamento de pedidos com status (em preparo, pronto, entregue)  
 - Interface para clientes realizarem pedidos online  
-- Painel administrativo para Administradores
+- Painel administrativo para funcionarios.
 
 ## 🛠️ Tecnologias Utilizadas
 
