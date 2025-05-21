@@ -73,23 +73,9 @@ pizzaria-deli/
 └── README.md
 ```
 
-## 🧪 Testes
-
-Execute os testes com:
-
-```bash
-npm test
-```
-
 ## 🧑‍🍳 Contribuindo
 
 Contribuições são bem-vindas!  
 Sinta-se à vontade para abrir uma issue ou enviar um pull request com melhorias.
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-Desenvolvido com ❤️ para apaixonados por pizza.
+Desenvolvido por Ítalo Braz.
