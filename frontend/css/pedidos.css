@@ -1,18 +1,19 @@
-/* orders.css - Estilo para página de pedidos */
-
-/* Variáveis de cores */
+/* pedidos.css - Estilo para página de pedidos */
 :root {
-  --primary: #e74c3c;       /* Vermelho pizzaria */
+  --primary: #e74c3c;       /* Vermelho tomate */
   --primary-dark: #c0392b;  /* Vermelho escuro */
-  --secondary: #2c3e50;     /* Azul escuro */
-  --light: #ecf0f1;         /* Cinza claro */
-  --dark: #34495e;          /* Azul médio */
+  --secondary: #f39c12;     /* Amarelo queijo */
+  --light: #f5d76e;         /* Amarelo claro */
+  --dark: #5c3317;          /* Marrom massa */
   --white: #ffffff;
+  --light-bg: #f9f3e9;      /* Fundo claro */
   --text: #333333;
+  --text-light: #777777;
   --success: #27ae60;       /* Verde */
   --warning: #f39c12;       /* Amarelo */
   --danger: #e74c3c;        /* Vermelho */
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --info: #3498db;          /* Azul */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
 
@@ -25,12 +26,60 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f5f5;
+  background-color: var(--light-bg);
   color: var(--text);
   line-height: 1.6;
+  position: relative;
 }
 
-/* Container principal */
+/* Elementos decorativos */
+.pizza-decoration {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.pepperoni, .olive {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.pepperoni {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary);
+}
+
+.olive {
+  width: 30px;
+  height: 30px;
+  background-color: var(--dark);
+}
+
+.pepperoni:nth-child(1) {
+  top: 10%;
+  left: 5%;
+}
+
+.olive:nth-child(2) {
+  top: 30%;
+  right: 5%;
+}
+
+.pepperoni:nth-child(3) {
+  bottom: 15%;
+  right: 8%;
+}
+
+.olive:nth-child(4) {
+  bottom: 25%;
+  left: 10%;
+}
+
+/* Container */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -42,74 +91,130 @@ body {
 header {
   background-color: var(--primary);
   color: var(--white);
-  padding: 1.5rem 0;
-  box-shadow: var(--shadow);
+  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: var(--shadow);
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: var(--light);
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Navegação */
 nav ul {
   display: flex;
   list-style: none;
-}
-
-nav ul li {
-  margin-left: 1.5rem;
+  gap: 1.5rem;
 }
 
 nav ul li a {
   color: var(--white);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  font-size: 1rem;
   transition: var(--transition);
-}
-
-nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-nav ul li a.active {
-  background-color: var(--white);
-  color: var(--primary);
-  font-weight: 600;
-}
-
-/* Conteúdo principal */
-main {
-  padding: 2rem 0;
-}
-
-main h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: var(--secondary);
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 0;
   position: relative;
 }
 
-main h2::after {
+nav ul li a:hover {
+  color: var(--light);
+}
+
+nav ul li a.active {
+  font-weight: 600;
+}
+
+nav ul li a.active::after {
   content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--light);
+  border-radius: 3px;
+}
+
+/* Seção de pedidos */
+.pedidos-section {
+  margin: 2rem 0 4rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-header p {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* Filtros */
+.pedidos-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--white);
+  color: var(--text);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.filter-btn:hover {
   background-color: var(--primary);
-  margin: 0.5rem auto 0;
+  color: var(--white);
+}
+
+.filter-btn.active {
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 600;
 }
 
 /* Container de pedidos */
@@ -121,48 +226,69 @@ main h2::after {
 /* Card de pedido */
 .pedido-card {
   background-color: var(--white);
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 1.5rem;
   box-shadow: var(--shadow);
   transition: var(--transition);
-  border-left: 4px solid var(--primary);
+  border-left: 5px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.pedido-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
 .pedido-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .pedido-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #eee;
 }
 
-.pedido-header h3 {
-  color: var(--secondary);
-  font-size: 1.2rem;
+.pedido-info h3 {
+  font-size: 1.3rem;
+  color: var(--dark);
+}
+
+.pedido-date {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .pedido-status {
   display: inline-block;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .status-pendente {
   background-color: var(--warning);
-  color: var(--white);
+  color: var(--dark);
 }
 
 .status-preparando {
-  background-color: #3498db;
+  background-color: var(--info);
   color: var(--white);
 }
 
@@ -181,108 +307,295 @@ main h2::after {
   color: var(--white);
 }
 
+/* Corpo do pedido */
 .pedido-body {
   display: grid;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
-.pedido-info {
+.pizza-item {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: var(--transition);
 }
 
-.pedido-info strong {
-  min-width: 120px;
-  color: var(--secondary);
+.pizza-item:hover {
+  background-color: #f0f0f0;
 }
 
-.pedido-info p {
-  color: #555;
+.pizza-info {
+  flex: 2;
 }
 
-.pedido-pizza {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px dashed #ddd;
+.pizza-info h4 {
+  font-size: 1.1rem;
+  color: var(--dark);
+  margin-bottom: 0.3rem;
 }
 
-.pedido-pizza h4 {
+.pizza-info p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.pizza-qtd {
+  flex: 0.5;
+  text-align: center;
+  font-weight: 600;
   color: var(--primary);
+}
+
+.pizza-price {
+  flex: 1;
+  text-align: right;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* Rodapé do pedido */
+.pedido-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.delivery-info {
+  flex: 2;
+  min-width: 250px;
+}
+
+.delivery-info p {
+  font-size: 0.9rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 0.5rem;
 }
 
-.pedido-pizza p {
-  color: #666;
-  font-size: 0.9rem;
+.delivery-info strong {
+  font-weight: 600;
 }
 
 .pedido-total {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
-  font-weight: bold;
+  flex: 1;
   text-align: right;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--primary);
-  font-size: 1.1rem;
+  min-width: 150px;
 }
 
-/* Mensagem quando não há pedidos */
+.pedido-total span {
+  font-weight: 500;
+  color: var(--text);
+  margin-right: 0.5rem;
+}
+
+/* Ações do pedido */
+.pedido-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-size: 0.9rem;
+}
+
+.btn-track {
+  background-color: var(--info);
+  color: var(--white);
+}
+
+.btn-track:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background-color: var(--white);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.btn-cancel:hover {
+  background-color: var(--danger);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Mensagem sem pedidos */
 .sem-pedidos {
   text-align: center;
   padding: 3rem;
-  color: #666;
-  font-size: 1.1rem;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  grid-column: 1 / -1;
 }
 
-.sem-pedidos a {
+.sem-pedidos i {
+  font-size: 3rem;
   color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
-.sem-pedidos a:hover {
-  text-decoration: underline;
+.sem-pedidos h3 {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.sem-pedidos p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Footer */
 footer {
-  background-color: var(--secondary);
+  background-color: var(--dark);
   color: var(--white);
-  text-align: center;
-  padding: 1.5rem 0;
-  margin-top: 2rem;
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  color: var(--light);
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   header .container {
     flex-direction: column;
+    gap: 1rem;
   }
   
   nav ul {
-    margin-top: 1rem;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
   }
   
-  nav ul li {
-    margin: 0.5rem;
-  }
-  
-  .pedido-info {
+  .pedido-footer {
     flex-direction: column;
+    align-items: flex-start;
   }
   
-  .pedido-info strong {
-    margin-bottom: 0.3rem;
+  .pedido-total {
+    text-align: left;
+    width: 100%;
+  }
+  
+  .pedido-actions {
+    justify-content: flex-start;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  main h2 {
+  .section-header h2 {
     font-size: 1.5rem;
   }
   
-  .pedido-card {
-    padding: 1rem;
+  .pizza-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .pizza-qtd, .pizza-price {
+    align-self: flex-end;
+  }
+  
+  .pedidos-filters {
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 }

@@ -1,47 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - Pizzaria</title>
-  <link rel="stylesheet" href="css/auth.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="auth-page">
-  <header>
-    <div class="container">
-      <h1>Pizzaria Delícia</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Pizzaria Delícia</title>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="auth-page">
+    <div class="pizza-background">
+      <div class="pizza-slice top-right"></div>
+      <div class="pizza-slice bottom-left"></div>
+      <div class="pepperoni"></div>
+      <div class="pepperoni"></div>
     </div>
-  </header>
 
-  <main class="container">
-    <div class="form-container">
-      <h2>Criar Conta</h2>
-      <form id="registerForm">
-        <div class="form-group">
-          <label for="nome">Nome Completo</label>
-          <input type="text" id="nome" required>
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <i class="fas fa-pizza-slice logo-icon"></i>
+          <h1>Pizzaria Delícia</h1>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="senha">Senha</label>
-          <input type="password" id="senha" minlength="6" required>
-        </div>
-        <button type="submit" class="btn">Cadastrar</button>
-      </form>
-      <p class="login-link">Já tem uma conta? <a href="login.html">Faça login</a></p>
-    </div>
-  </main>
+      </div>
+    </header>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 Pizzaria Delícia</p>
-    </div>
-  </footer>
+    <main class="container">
+      <div class="form-container">
+        <div class="form-header">
+          <i class="fas fa-user-plus form-icon"></i>
+          <h2>Criar Conta</h2>
+        </div>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="nome"><i class="fas fa-user"></i> Nome Completo</label>
+            <input
+              type="text"
+              id="nome"
+              placeholder="Seu nome completo"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="seu@email.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="senha"><i class="fas fa-lock"></i> Senha</label>
+            <input
+              type="password"
+              id="senha"
+              minlength="6"
+              placeholder="••••••••"
+              required
+              onkeyup="checkPasswordStrength(this.value)"
+            />
+            <div class="password-strength">
+              <span class="strength-bar"></span>
+              <span class="strength-bar"></span>
+              <span class="strength-bar"></span>
+              <span class="strength-text"></span>
+            </div>
+          </div>
+          <button type="submit" class="btn">
+            <i class="fas fa-user-check"></i> Cadastrar
+          </button>
+        </form>
+        <p class="login-link">
+          Já tem uma conta? <a href="login.html">Faça login</a>
+        </p>
+      </div>
+    </main>
 
-  <script src="js/auth.js"></script>
-</body>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <i class="fas fa-phone-alt"></i>
+          <p>(81) 4002-8922</p>
+          <i class="fas fa-clock"></i>
+          <p>Aberto das 18h às 23h</p>
+        </div>
+        <p class="copyright">&copy; 2025 Pizzaria Delícia</p>
+      </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+  </body>
 </html>

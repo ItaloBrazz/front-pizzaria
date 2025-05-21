@@ -102,3 +102,59 @@ if (registerForm) {
     register(nome, email, senha);
   });
 }
+
+  function checkPasswordStrength(password) {
+    const strengthContainer = document.querySelector('.password-strength');
+    const strengthBars = document.querySelectorAll('.strength-bar');
+    const strengthText = document.querySelector('.strength-text');
+    
+    // Reset classes
+    strengthContainer.className = 'password-strength';
+    
+    // Calcular força
+    let strength = 0;
+    
+    // Verificar comprimento
+    if (password.length > 0) strength += 1;
+    if (password.length >= 6) strength += 1;
+    if (password.length >= 10) strength += 1;
+    
+    // Verificar caracteres especiais
+    if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) strength += 1;
+    
+    // Verificar números
+    if (/\d/.test(password)) strength += 1;
+    
+    // Verificar maiúsculas e minúsculas
+    if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength += 1;
+    
+    // Determinar nível de força (0-5)
+    let strengthLevel = 'weak';
+    let text = 'Fraca';
+    
+    if (strength >= 4) {
+      strengthLevel = 'strong';
+      text = 'Forte';
+    } else if (strength >= 2) {
+      strengthLevel = 'medium';
+      text = 'Média';
+    }
+    
+    if (strength >= 5) {
+      strengthLevel = 'very-strong';
+      text = 'Muito forte';
+    }
+    
+    // Aplicar classes
+    strengthContainer.classList.add(`password-${strengthLevel}`);
+    strengthText.textContent = text;
+    
+    // Ativar as barras correspondentes
+    strengthBars.forEach((bar, index) => {
+      if (index < strength) {
+        bar.style.opacity = '1';
+      } else {
+        bar.style.opacity = '0.2';
+      }
+    });
+  }
