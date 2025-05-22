@@ -6,25 +6,39 @@
   <title>Cardápio - Pizzaria Delícia</title>
   <link rel="stylesheet" href="css/menu.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="menu">
+  <!-- Elementos decorativos -->
+  <div class="pizza-decoration">
+    <div class="pepperoni"></div>
+    <div class="olive"></div>
+  </div>
+
   <header>
     <div class="container">
-      <h1>Pizzaria Delícia</h1>
+      <div class="logo-wrapper">
+        <i class="fas fa-pizza-slice logo-icon"></i>
+        <h1>Pizzaria Delícia</h1>
+      </div>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pizzas.html" class="active">Cardápio</a></li>
-          <li><a href="pedidos.html">Meus Pedidos</a></li>
-          <li><a href="#" id="logout">Sair</a></li>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="pizzas.html" class="active"><i class="fas fa-utensils"></i> Cardápio</a></li>
+          <li><a href="pedidos.html"><i class="fas fa-receipt"></i> Meus Pedidos</a></li>
+          <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="destaques">
-      <h2>Nosso Cardápio</h2>
+    <section class="menu-section">
+      <div class="section-header">
+        <h2><i class="fas fa-pizza-slice"></i> Nosso Cardápio</h2>
+        <p>Escolha sua pizza favorita e faça seu pedido</p>
+      </div>
+      
       <div class="pizzas-grid" id="pizzas-container">
         <!-- Pizzas serão carregadas via JS -->
       </div>
@@ -34,21 +48,21 @@
     <div id="pedidoModal" class="modal">
       <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <h2>Fazer Pedido</h2>
+        <h2><i class="fas fa-shopping-bag"></i> Fazer Pedido</h2>
         <form id="pedidoForm">
           <input type="hidden" id="pizzaId">
           <div class="form-group">
-            <label for="quantidade">Quantidade</label>
+            <label for="quantidade"><i class="fas fa-list-ol"></i> Quantidade</label>
             <input type="number" id="quantidade" min="1" value="1" required>
           </div>
           <div class="form-group">
-            <label for="endereco">Endereço de Entrega</label>
+            <label for="endereco"><i class="fas fa-map-marker-alt"></i> Endereço de Entrega</label>
             <textarea id="endereco" required></textarea>
           </div>
           <div class="form-group">
-            <p>Total: R$ <span id="totalPedido">0.00</span></p>
+            <p class="total-text"><i class="fas fa-receipt"></i> Total: <span id="totalPedido">0.00</span></p>
           </div>
-          <button type="submit" class="btn">Confirmar Pedido</button>
+          <button type="submit" class="btn btn-submit"><i class="fas fa-check-circle"></i> Confirmar Pedido</button>
         </form>
       </div>
     </div>
@@ -56,7 +70,31 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2023 Pizzaria Delícia. Todos os direitos reservados.</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-map-marker-alt"></i> Endereço</h3>
+          <p>Rua das Pizzas, 123</p>
+          <p>Centro - São Paulo/SP</p>
+        </div>
+        <div class="footer-section">
+          <h3><i class="fas fa-clock"></i> Horário</h3>
+          <p>Terça a Domingo</p>
+          <p>18h às 23h</p>
+        </div>
+        <div class="footer-section">
+          <h3><i class="fas fa-phone-alt"></i> Contato</h3>
+          <p>(11) 1234-5678</p>
+          <p>contato@pizzariadelicia.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pizzaria Delícia. Todos os direitos reservados.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
 
