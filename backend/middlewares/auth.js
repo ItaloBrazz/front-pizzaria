@@ -6,11 +6,13 @@ const auth = async (req, res, next) => {
     const token = req.header('Authorization').replace('Bearer ', '');
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const usuario = await Usuario.findOne({ where: { id: decoded.id } });
-
+    console.log('estouaqui')
     if (!usuario) {
       throw new Error();
     }
-
+    console.log('hhahahahahah')
+    req.userid = usuario.id;
+    console.log("ESSE AQUI É A PORRA DO TOKEN" + req.userid);
     req.token = token;
     req.usuario = usuario;
     next();

@@ -10,7 +10,7 @@ const criarPedido = async (req, res) => {
     }
 
     const pedido = await Pedido.create({
-      usuarioId: req.usuario.id,
+      usuarioId: req.userid,
       pizzaId,
       quantidade,
       enderecoEntrega,
@@ -26,7 +26,6 @@ const criarPedido = async (req, res) => {
 
 const listarPedidos = async (req, res) => {
   try {
-    // Verifica se é admin
     if (req.usuario.role !== 'admin') {
       return res.status(403).json({ error: 'Acesso negado' });
     }
@@ -46,7 +45,7 @@ const listarPedidos = async (req, res) => {
 const listarPedidosUsuario = async (req, res) => {
   try {
     const pedidos = await Pedido.findAll({
-      where: { usuarioId: req.usuario.id },
+      where: { usuarioId: req.userid },
       include: [
         { model: Pizza, attributes: ['nome', 'preco', 'imagem'] }
       ]
@@ -72,7 +71,7 @@ const obterPedido = async (req, res) => {
     }
 
     // Verifica se o usuário é o dono do pedido ou admin
-    if (pedido.usuarioId !== req.usuario.id && req.usuario.role !== 'admin') {
+    if (pedido.usuarioId !== req.userid && req.usuario.role !== 'admin') {
       return res.status(403).json({ error: 'Acesso negado' });
     }
 

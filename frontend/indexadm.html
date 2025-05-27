@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria Delícia</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="home">
+  <!-- Elementos decorativos de pizza -->
+  <div class="pizza-decoration">
+    <div class="pepperoni"></div>
+    <div class="pepperoni"></div>
+    <div class="olive"></div>
+    <div class="olive"></div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="logo-wrapper">
+        <i class="fas fa-pizza-slice logo-icon"></i>
+        <h1>Pizzaria Delícia</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="pizzas.html" class="nav-link"><i class="fas fa-utensils"></i> Cardápio</a></li>
+          <li><a href="admin.html" class="nav-link"><i class="fas fa-receipt"></i> Voltar ao Dashboard</a></li>
+          <li><a href="#" id="logout" class="nav-link"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+      </nav>
+      <div class="user-welcome">
+        <i class="fas fa-user-circle"></i>
+        <span id="username">Olá, Cliente!</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Seção Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Pizza perfeita em <span class="highlight">30 minutos</span> ou menos!</h2>
+        <p>Experimente nossas receitas artesanais feitas com ingredientes frescos e selecionados.</p>
+        <div class="hero-buttons">
+          <a href="pizzas.html" class="btn btn-primary"><i class="fas fa-pizza-slice"></i> Ver Cardápio</a>
+          <a href="pedidos.html" class="btn btn-secondary"><i class="fas fa-bolt"></i> Pedir Agora</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pizza deliciosa">
+      </div>
+    </section>
+
+    <!-- Pizzas em Destaque -->
+    <section class="destaques">
+      <div class="section-header">
+        <h2><i class="fas fa-star"></i> Pizzas em Destaque</h2>
+        <p>As preferidas dos nossos clientes</p>
+      </div>
+      <div class="pizzas-grid" id="destaques">
+        <!-- Pizzas serão carregadas via JS -->
+        <div class="loader">
+          <i class="fas fa-pizza-slice fa-spin"></i>
+          <p>Carregando nossas delícias...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promoções -->
+    <section class="promocoes">
+      <div class="section-header">
+        <h2><i class="fas fa-tag"></i> Promoções Especiais</h2>
+        <p>Aproveite nossas ofertas por tempo limitado</p>
+      </div>
+      <div class="promo-banner">
+        <div class="promo-card">
+          <h3>Combo Família</h3>
+          <p>2 Pizzas Grandes + Refri 2L</p>
+          <span class="promo-price">R$ 69,90</span>
+          <span class="promo-badge">-30%</span>
+        </div>
+        <div class="promo-card">
+          <h3>Quarta da Pizza</h3>
+          <p>Todas as pizzas médias por</p>
+          <span class="promo-price">R$ 29,90</span>
+          <span class="promo-badge">-25%</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-map-marker-alt"></i> Endereço</h3>
+          <p>Rua da Pizzaria, 1201</p>
+          <p>Rio Doce - Olinda/PE</p>
+        </div>
+        <div class="footer-section">
+          <h3><i class="fas fa-clock"></i> Horário</h3>
+          <p>Terça a Domingo</p>
+          <p>18h às 23h</p>
+        </div>
+        <div class="footer-section">
+          <h3><i class="fas fa-phone-alt"></i> Contato</h3>
+          <p>(81) 4002-8922</p>
+          <p>contato@pizzariadelicia.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pizzaria Delícia. Todos os direitos reservados.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/home.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/pizzas.js"></script>
+</body>
+</html>

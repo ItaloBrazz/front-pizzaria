@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const pedidosContainer = document.getElementById('pedidos-container');
-    const API_URL = 'http://localhost:3001/api/pedidos/meus-pedidos';
+    const API_URL = 'http://localhost:3001/api/pedidos';
 
     // Função para formatar data
     function formatarData(dataString) {

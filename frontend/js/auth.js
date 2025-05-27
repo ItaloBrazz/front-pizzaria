@@ -27,13 +27,17 @@ async function login(email, senha) {
       },
       body: JSON.stringify({ email, senha })
     });
-
-    const data = await response.json();
     
+    const data = await response.json();
+    console.log(data);
     if (response.ok) {
       localStorage.setItem('token', data.token);
       localStorage.setItem('usuario', JSON.stringify(data.usuario));
-      window.location.href = 'index.html';
+    if (data.usuario.role === 'admin') {
+        window.location.href = 'admin.html';
+      } else {
+        window.location.href = 'index.html';
+      }
     } else {
       throw new Error(data.error || 'Login falhou');
     }

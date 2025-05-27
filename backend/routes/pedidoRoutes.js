@@ -10,8 +10,10 @@ const {
   listarPedidosUsuario
 } = require('../controllers/pedidoController');
 
+
 // Todas as rotas requerem autenticação
 router.use(auth);
+
 
 // Rotas para usuários comuns
 router.post('/', criarPedido);
