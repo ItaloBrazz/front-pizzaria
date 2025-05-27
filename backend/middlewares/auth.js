@@ -12,6 +12,7 @@ const auth = async (req, res, next) => {
     }
     console.log('hhahahahahah')
     req.userid = usuario.id;
+    req.role = usuario.role;
     console.log("ESSE AQUI É A PORRA DO TOKEN" + req.userid);
     req.token = token;
     req.usuario = usuario;

@@ -26,10 +26,6 @@ const criarPedido = async (req, res) => {
 
 const listarPedidos = async (req, res) => {
   try {
-    if (req.usuario.role !== 'admin') {
-      return res.status(403).json({ error: 'Acesso negado' });
-    }
-
     const pedidos = await Pedido.findAll({
       include: [
         { model: Pizza, attributes: ['nome', 'preco'] },
@@ -44,17 +40,33 @@ const listarPedidos = async (req, res) => {
 
 const listarPedidosUsuario = async (req, res) => {
   try {
-    const pedidos = await Pedido.findAll({
-      where: { usuarioId: req.userid },
-      include: [
-        { model: Pizza, attributes: ['nome', 'preco', 'imagem'] }
-      ]
-    });
-    res.json(pedidos);
+    if (req.usuario.role === 'admin') {
+      const pedidos = await Pedido.findAll({
+        include: [
+          { model: Pizza, attributes: ['nome', 'preco', 'imagem'] },
+          { model: Usuario, attributes: ['nome', 'email'] }
+        ]
+      });
+      return res.json(pedidos);
+    }
+
+    if (req.usuario.role === 'user') {
+      const pedidos = await Pedido.findAll({
+        where: { usuarioId: req.usuario.id },
+        include: [
+          { model: Pizza, attributes: ['nome', 'preco', 'imagem'] }
+        ]
+      });
+      return res.json(pedidos);
+    }
+
+    return res.status(403).json({ error: 'Acesso negado' });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: 'Falha ao buscar pedidos' });
   }
 };
+
 
 const obterPedido = async (req, res) => {
   try {
