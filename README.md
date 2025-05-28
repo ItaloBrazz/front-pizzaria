@@ -1,6 +1,6 @@
 # 🍕 Pizzaria App
 
-Sistema completo para gerenciamento de pizzaria, incluindo controle de pedidos, administração de produtos, gerenciamento de estoque e painel para clientes e funcionários.
+Front-end completo para gerenciamento de pizzaria, incluindo controle de pedidos, administração de produtos, gerenciamento de estoque e painel para clientes e funcionários.
 
 ## 🚀 Funcionalidades
 
