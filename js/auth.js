@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://back-pizzaria.onrender.com/api';
 const PUBLIC_PAGES = ['login.html', 'register.html'];
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const pedidosContainer = document.getElementById('pedidos-container');
-    const API_URL = 'http://localhost:3001/api/pedidos/meus-pedidos';
+    const API_URL = 'https://back-pizzaria.onrender.com/api/pedidos/meus-pedidos';
 
     // Função para formatar data
     function formatarData(dataString) {

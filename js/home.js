@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const destaquesContainer = document.getElementById('destaques');
-    const API_URL = 'http://localhost:3001/api/pizzas'; // URL da sua API
+    const API_URL = 'https://back-pizzaria.onrender.com/api/pizzas'; // URL da sua API
 
     // Função para criar um card de pizza
     function criarCardPizza(pizza) {

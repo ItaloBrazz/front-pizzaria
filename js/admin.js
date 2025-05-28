@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const pizzaForm = document.getElementById("pizzaForm");
   const pizzasList = document.getElementById("pizzasList");
-  const API_URL = "http://localhost:3001/api/pizzas";
+  const API_URL = "https://back-pizzaria.onrender.com/api/pizzas";
 
   try {
     const user = JSON.parse(localStorage.getItem("usuario"));

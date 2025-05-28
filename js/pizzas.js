@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Carregar pizzas
   async function carregarPizzas() {
     try {
-      const response = await fetch('http://localhost:3001/api/pizzas');
+      const response = await fetch('https://back-pizzaria.onrender.com/api/pizzas');
       const pizzas = await response.json();
       
       pizzasContainer.innerHTML = '';
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3001/api/pedidos', {
+      const response = await fetch('https://back-pizzaria.onrender.com/api/pedidos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
