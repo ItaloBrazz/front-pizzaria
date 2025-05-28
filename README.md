@@ -24,46 +24,10 @@ Clone o projeto:
 git clone https://github.com/ItaloBrazz/pizzaria-deli.git
 cd pizzaria-deli
 ```
-
-Instale as dependências:
-
-```bash
-# Backend
-cd backend
-npm install
-```
-
-Configure as variáveis de ambiente criando um arquivo `.env` na raiz do backend com as seguintes variáveis:
-
-```env
-JWT_SECRET=sua_chave_secreta
-PORT=3001
-```
-
-Execute as migrações e inicie o servidor:
-
-```bash
-# Dentro da pasta backend
-npm run dev
-```
-
-E para o frontend:
-
-```bash
-# Dentro da pasta frontend
-Inicie o Live Server
-```
-
 ## 📂 Estrutura do Projeto
 
 ```
 pizzaria-deli/
-├── backend/
-│   ├── config/
-│   ├── models/
-│   ├── routes/
-│   ├── middlewares/
-│   └── config/
 ├── frontend/
 │   ├── src/
 │   │   ├── css/
