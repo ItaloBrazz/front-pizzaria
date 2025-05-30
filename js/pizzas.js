@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="pizza-info">
             <h3>${pizza.nome}</h3>
             <p>${pizza.ingredientes}</p>
+            <br>
+            <h1>${pizza.tamanho}</h1>
             <p class="pizza-price">R$ ${pizza.preco.toFixed(2)}</p>
             <button class="btn btn-pedir" data-id="${pizza.id}" data-preco="${pizza.preco}">Fazer Pedido</button>
           </div>
